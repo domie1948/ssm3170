@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dao.GaizaoxinxiDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.entity.GaizaoxinxiEntity" id="gaizaoxinxiMap">
+        <result property="zuifanbianhao" column="zuifanbianhao"/>
+        <result property="zuifanxingming" column="zuifanxingming"/>
+        <result property="fanzuileixing" column="fanzuileixing"/>
+        <result property="suozaijianqu" column="suozaijianqu"/>
+        <result property="gaizaomubiao" column="gaizaomubiao"/>
+        <result property="gaizaojihua" column="gaizaojihua"/>
+        <result property="gaizaoneirong" column="gaizaoneirong"/>
+        <result property="shixingshijian" column="shixingshijian"/>
+        <result property="jieshushijian" column="jieshushijian"/>
+        <result property="beizhu" column="beizhu"/>
+        <result property="minjingzhanghao" column="minjingzhanghao"/>
+        <result property="sfsh" column="sfsh"/>
+        <result property="shhf" column="shhf"/>
+    </resultMap>
+
+	<select id="selectListVO"
+		resultType="com.entity.vo.GaizaoxinxiVO" >
+		SELECT * FROM gaizaoxinxi  gaizaoxinxi         
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectVO"
+		resultType="com.entity.vo.GaizaoxinxiVO" >
+		SELECT  gaizaoxinxi.* FROM gaizaoxinxi  gaizaoxinxi
+ 		<where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+
+    <select id="selectListView"
+		resultType="com.entity.view.GaizaoxinxiView" >
+
+		SELECT  gaizaoxinxi.* FROM gaizaoxinxi  gaizaoxinxi 	        
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectView"
+		resultType="com.entity.view.GaizaoxinxiView" >
+		SELECT * FROM gaizaoxinxi  gaizaoxinxi <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	
+</mapper>
